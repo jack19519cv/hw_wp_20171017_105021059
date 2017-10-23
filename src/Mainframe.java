@@ -70,27 +70,6 @@ public class Mainframe extends JFrame {
                 }
             });
         }
-//        for (int i = 0 ;i<9;i++){
-//
-//            int s = rand.nextInt(9);
-//            while(true){
-//                Jbtn[i]=new JButton(Integer.toString(s));
-//
-//                break;
-//            }
-//            Jp.add(Jbtn[i]);
-//
-//            Jbtn[i].addActionListener(new AbstractAction() {
-//                @Override
-//                public void actionPerformed(ActionEvent e) {
-//                    JButton tmpButton = (JButton)e.getSource();
-//                    Jtf.setText(Jtf.getText()+tmpButton.getText());
-//
-//                }
-//            });
-//
-//
-//        }
         Jtf.setEditable(false);
     }
 }
