@@ -7,14 +7,15 @@ import java.util.Random;
 
 public class Mainframe extends JFrame {
     private JTextField Jtf = new JTextField();
-   private JButton Jbtn[] = new JButton[8];
-   private JPanel Jp= new JPanel(new GridLayout(3,3,3,3));
+   private JButton Jbtn[] = new JButton[10];
+    private int data[] = new int[10];
+   private JPanel Jp= new JPanel(new GridLayout(4,3,3,3));
     private Container cp;
     private Dimension dim = Toolkit.getDefaultToolkit().getScreenSize();
     private int frmW = 300,frmH=400 ,ScreenW,ScreenH;
     private  Loginframe log;
-private boolean b;
-    private int  n=0;
+    private boolean b;
+    private int  n;
     public Mainframe(Loginframe loginframe){
        log= loginframe;
         init();
@@ -38,19 +39,27 @@ private boolean b;
         cp.setLayout(new BorderLayout(5,5));
         cp.add(Jtf,BorderLayout.NORTH);
         cp.add(Jp,BorderLayout.CENTER);
-        for(int i=0;i<9;i++)
+        for(int i=0;i<10;i++){
+            for(int j =1;j<11;j++) {
+                data[i] = j;
+            }
+
+        }
+        for(int i=0;i<10;i++)
         {
             b = true;
             while(b) {
                 b = false;
-                n = rand.nextInt(9);
-                for(int j=0;j<Jbtn.length;j++) {
-                    if(Jbtn[j].getText().equals(Integer.toString(n))){
+                n = rand.nextInt(10);
+                for(int j=0;j<data.length;j++) {
+                    if(n==data[j]){
                         b = true;
                     }
                 }
+                data[i]=n;
             }
-            Jbtn[i]=new JButton(Integer.toString(n));
+
+            Jbtn[i]=new JButton(Integer.toString(data[i]));
             Jp.add(Jbtn[i]);
             Jbtn[i].addActionListener(new AbstractAction() {
                 @Override
